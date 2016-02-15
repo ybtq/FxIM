@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Window size="480,320" caption="0,0,0,30" roundcorner="4,4">
+	<Font name="宋体" size="12" bold="false" default="true" />
+  	<Font name="微软雅黑" size="12" bold="true"/>
+	<Default name="VScrollBar" value="button1normalimage=&quot;file='misc\vscrollbar.png' source='0,0,16,16'&quot; button1hotimage=&quot;file='misc\vscrollbar.png' source='16,0,32,16,16'&quot; button1pushedimage=&quot;file='misc\vscrollbar.png' source='32,0,48,16'&quot; button2normalimage=&quot;file='misc\vscrollbar.png' source='0,32,16,48'&quot; button2hotimage=&quot;file='misc\vscrollbar.png' source='16,32,32,48'&quot; button2pushedimage=&quot;file='misc\vscrollbar.png' source='32,32,48,48'&quot; thumbnormalimage=&quot;file='misc\vscrollbar.png' source='0,48,16,64' corner='0,2,0,2'&quot; thumbhotimage=&quot;file='misc\vscrollbar.png' source='16,48,32,64' corner='0,2,0,2'&quot; thumbpushedimage=&quot;file='misc\vscrollbar.png' source='32,48,48,64' corner='0,2,0,2'&quot; bknormalimage=&quot;file='misc\vscrollbar.png' source='0,16,16,32'&quot;" />
+	<!--
+	<Default name="VScrollBar" value="button1normalimage=&quot;file='misc\scrollbar.bmp' source='0,90,16,106' mask='#FFFF00FF'&quot; button1hotimage=&quot;file='misc\scrollbar.bmp' source='18,90,34,106' mask='#FFFF00FF'&quot; button1pushedimage=&quot;file='misc\scrollbar.bmp' source='36,90,52,106' mask='#FFFF00FF'&quot; button1disabledimage=&quot;file='misc\scrollbar.bmp' source='54,90,70,106' mask='#FFFF00FF'&quot; button2normalimage=&quot;file='misc\scrollbar.bmp' source='0,108,16,124' mask='#FFFF00FF'&quot; button2hotimage=&quot;file='misc\scrollbar.bmp' source='18,108,34,124' mask='#FFFF00FF'&quot; button2pushedimage=&quot;file='misc\scrollbar.bmp' source='36,108,52,124' mask='#FFFF00FF'&quot; button2disabledimage=&quot;file='misc\scrollbar.bmp' source='54,108,70,124' mask='#FFFF00FF'&quot; thumbnormalimage=&quot;file='misc\scrollbar.bmp' source='0,126,16,142' corner='2,2,2,2' mask='#FFFF00FF'&quot; thumbhotimage=&quot;file='misc\scrollbar.bmp' source='18,126,34,142' corner='2,2,2,2' mask='#FFFF00FF'&quot; thumbpushedimage=&quot;file='misc\scrollbar.bmp' source='36,126,52,142' corner='2,2,2,2' mask='#FFFF00FF'&quot; thumbdisabledimage=&quot;file='misc\scrollbar.bmp' source='54,126,70,142' corner='2,2,2,2' mask='#FFFF00FF'&quot; railnormalimage=&quot;file='misc\scrollbar.bmp' source='0,144,16,160' corner='2,2,2,2' mask='#FFFF00FF'&quot; railhotimage=&quot;file='misc\scrollbar.bmp' source='18,144,34,160' corner='2,2,2,2' mask='#FFFF00FF'&quot; railpushedimage=&quot;file='misc\scrollbar.bmp' source='36,144,52,160' corner='2,2,2,2' mask='#FFFF00FF'&quot; raildisabledimage=&quot;file='misc\scrollbar.bmp' source='54,144,70,160' corner='2,2,2,2' mask='#FFFF00FF'&quot; bknormalimage=&quot;file='misc\scrollbar.bmp' source='0,162,16,178' corner='2,2,2,2' mask='#FFFF00FF'&quot; bkhotimage=&quot;file='misc\scrollbar.bmp' source='18,162,34,178' corner='2,2,2,2' mask='#FFFF00FF'&quot; bkpushedimage=&quot;file='misc\scrollbar.bmp' source='36,162,52,178' corner='2,2,2,2' mask='#FFFF00FF'&quot; bkdisabledimage=&quot;file='misc\scrollbar.bmp' source='54,162,70,178' corner='2,2,2,2' mask='#FFFF00FF'&quot; " />
+	<Default name="HScrollBar" value="button1normalimage=&quot;file='misc\scrollbar.bmp' source='0,0,16,16' mask='#FFFF00FF'&quot; button1hotimage=&quot;file='misc\scrollbar.bmp' source='18,0,34,16' mask='#FFFF00FF'&quot; button1pushedimage=&quot;file='misc\scrollbar.bmp' source='36,0,52,16' mask='#FFFF00FF'&quot; button1disabledimage=&quot;file='misc\scrollbar.bmp' source='54,0,70,16' mask='#FFFF00FF'&quot; button2normalimage=&quot;file='misc\scrollbar.bmp' source='0,18,16,34' mask='#FFFF00FF'&quot; button2hotimage=&quot;file='misc\scrollbar.bmp' source='18,18,34,34' mask='#FFFF00FF'&quot; button2pushedimage=&quot;file='misc\scrollbar.bmp' source='36,18,52,34' mask='#FFFF00FF'&quot; button2disabledimage=&quot;file='misc\scrollbar.bmp' source='54,18,70,34' mask='#FFFF00FF'&quot; thumbnormalimage=&quot;file='misc\scrollbar.bmp' source='0,36,16,52' corner='2,2,2,2' mask='#FFFF00FF'&quot; thumbhotimage=&quot;file='misc\scrollbar.bmp' source='18,36,34,52' corner='2,2,2,2' mask='#FFFF00FF'&quot; thumbpushedimage=&quot;file='misc\scrollbar.bmp' source='36,36,52,52' corner='2,2,2,2' mask='#FFFF00FF'&quot; thumbdisabledimage=&quot;file='misc\scrollbar.bmp' source='54,36,70,52' corner='2,2,2,2' mask='#FFFF00FF'&quot; railnormalimage=&quot;file='misc\scrollbar.bmp' source='0,54,16,70' corner='2,2,2,2' mask='#FFFF00FF'&quot; railhotimage=&quot;file='misc\scrollbar.bmp' source='18,54,34,70' corner='2,2,2,2' mask='#FFFF00FF'&quot; railpushedimage=&quot;file='misc\scrollbar.bmp' source='36,54,52,70' corner='2,2,2,2' mask='#FFFF00FF'&quot; raildisabledimage=&quot;file='misc\scrollbar.bmp' source='54,54,70,70' corner='2,2,2,2' mask='#FFFF00FF'&quot; bknormalimage=&quot;file='misc\scrollbar.bmp' source='0,72,16,88' corner='2,2,2,2' mask='#FFFF00FF'&quot; bkhotimage=&quot;file='misc\scrollbar.bmp' source='18,72,34,88' corner='2,2,2,2' mask='#FFFF00FF'&quot; bkpushedimage=&quot;file='misc\scrollbar.bmp' source='36,72,52,88' corner='2,2,2,2' mask='#FFFF00FF'&quot; bkdisabledimage=&quot;file='misc\scrollbar.bmp' source='54,72,70,88' corner='2,2,2,2' mask='#FFFF00FF'&quot; " />
+	-->
+	<!--<Default name="CheckBox" value="textcolor=&quot;#FF454545&quot; disabledtextcolor=&quot;#FF888888&quot; width=&quot;100&quot; height=&quot;21&quot; textpadding=&quot;22,1,0,0&quot; align=&quot;left&quot; normalimage=&quot;file='settingdlg\checkbox_normal.png' dest='3,3,18,18'&quot; hotimage=&quot;file='settingdlg\checkbox_hightlight.png' dest='3,3,18,18'&quot; selectedimage=&quot;file='settingdlg\checkbox_tick_normal.png' dest='3,3,18,18'&quot; selectedhotimage=&quot;file='settingdlg\checkbox_tick_highlight.png' dest='3,3,18,18'&quot; autocalcwidth=&quot;true&quot;"/>-->
+	<Default name="CheckBox" value="disabledtextcolor=&quot;#FF888888&quot; height=&quot;14&quot; textpadding=&quot;18,1,0,0&quot; align=&quot;left&quot; normalimage=&quot;file='settingdlg\check_normal.png' dest='0,0,14,14'&quot; hotimage=&quot;file='settingdlg\check_hover.png' dest='0,0,14,14'&quot; pushedimage=&quot;file='settingdlg\check_down.png' dest='0,0,14,14'&quot; disabledimage=&quot;file='settingdlg\check_disable.png' dest='0,0,14,14'&quot; selectedimage=&quot;file='settingdlg\checked_normal.png' dest='0,0,14,14'&quot; selectedhotimage=&quot;file='settingdlg\checked_hover.png' dest='0,0,14,14'&quot; selectedpushedimage=&quot;file='settingdlg\checked_down.png' dest='0,0,14,14'&quot; autocalcwidth=&quot;true&quot;"/>
+	<HorizontalLayout name="bg" bkimage="file='misc\bg_default.png' corner='608,228,1,1'" hole="true">
+		<VerticalLayout bkimage="file='misc\border.png' corner='5,5,5,5'" inset="1,0,1,0" hole="true">
+			<!--标题栏-->
+			<HorizontalLayout height="30">
+				<VerticalLayout inset="5,5,2,0">
+					<Label name="label_title" textcolor="#FFFFFFFF" font="1" text="程序设置" />
+				</VerticalLayout>
+				<VerticalLayout width="67">
+					<Button name="btn_sys_min" float="true" pos="0,0,28,19" width="28" height="19" maxheight="19" maxwidth="28"  normalimage="file='misc\btn_mini_normal.png'" hotimage="misc\btn_mini_highlight.png" pushedimage="misc\btn_mini_down.png"  />
+					<Button name="btn_sys_close" float="true" pos="28,0,67,19" width="39" height="19" maxheight="19" maxwidth="39"  normalimage="file='misc\btn_close_normal.png'" hotimage="misc\btn_close_highlight.png" pushedimage="misc\btn_close_down.png"  />
+				</VerticalLayout>
+			</HorizontalLayout>
+			<HorizontalLayout bkimage="file='misc\glow.png' corner='2,2,2,2'" inset="0,0,0,0">
+				<!--左侧面板-->
+		    	<VerticalLayout width="100"  >
+		    		<Option name="option_personal" text="个人资料" font="1" selected="true" normalimage="settingdlg\option_lefttab_normal.png" hotimage="settingdlg\option_lefttab_hover.png" selectedimage="settingdlg\option_lefttab_selected.png" group="group_lefttab"/>
+              		<Option name="option_general" text="常规设置" font="1" normalimage="settingdlg\option_lefttab_normal.png" hotimage="settingdlg\option_lefttab_hover.png" selectedimage="settingdlg\option_lefttab_selected.png" group="group_lefttab"/>
+              		<Option name="option_network" text="网络设置" font="1" normalimage="settingdlg\option_lefttab_normal.png" hotimage="settingdlg\option_lefttab_hover.png" selectedimage="settingdlg\option_lefttab_selected.png" group="group_lefttab"/>
+            	</VerticalLayout>
+            	<!--右侧设置-->
+            	<VerticalLayout bkimage="settingdlg\right_bg.png" borderround="2,2">        		
+            		<TabLayout name="tablayout_setting" selectedid="0" inset="10,10,0,0" >
+            			<!--个人设置-->
+            			<VerticalLayout name="verticallayout_personal">
+	            			<HorizontalLayout height="60">
+	            				<Label text="头像设置:" align="right" width="80"/>
+		            			<VerticalLayout inset="5,4,0,0">
+					        		<!--fade属性是改变任意一个控件的透明度，例bkimage="file='xlg.jpg' fade='50'"-->
+					        		<!--头像按钮的float属性为true，表示绝对位置，pos.x = (48-40)/2 + (58-48)/2，pos.y同理-->
+					        		<Label name="label_avatar" width="40" height="40" pos="9,8" float="true" />
+									<Button name="btn_avatar_border" width="48" height="48" maxwidth="48" maxheight="48" normalimage="file='misc\btn_avatar_border.png' source='0,0,48,48' mask='#FFFF00FF'" hotimage="file='misc\btn_avatar_border.png' source='48,0,96,48' mask='#FFFF00FF'" pushedimage="file='misc\btn_avatar_border.png' source='96,0,144,48' mask='#FFFF00FF'" />   			
+				        		</VerticalLayout>
+	            			</HorizontalLayout>
+	            			<HorizontalLayout height="40">
+	            				<Label text="用户名: " align="right" width="80" height="22"/>
+	            				<Edit name="edit_nickname" width="150" height="22" bordercolor="#FF9CBDD3" bordersize="1" />		            				
+	            			</HorizontalLayout>
+	            			<HorizontalLayout height="40">
+	            				<Label text="组: " align="right" width="80" height="22" />
+	            				<Edit name="edit_groupname" width="150" height="22" bordercolor="#FF9CBDD3" bordersize="1"/>
+	            			</HorizontalLayout>
+            			</VerticalLayout>
+            			<!--常规设置-->
+            			<VerticalLayout name="verticallayout_general">
+            				<HorizontalLayout height="30">
+            					<CheckBox text="开机启动" width="100" />
+            				</HorizontalLayout>
+            				<HorizontalLayout height="30">
+            					<CheckBox text="接收消息声音提示" width="120" padding="0,3,0,0"/>
+            					<Edit name="edit_msgtipfile" width="200" height="22" bordercolor="#FF9CBDD3" bordersize="1"/>
+            					<Button name="btn_msgtipfile" padding="0,0,0,0" text="..." width="25" height="24" bkimage="file='misc\btn_normal.png' corner='5,3,5,3'" focusedimage="file='misc\btn_focus.png' corner='5,3,5,3'" hotimage="file='misc\btn_highlight.png' corner='5,3,5,3'" pushedimage="file='misc\btn_down.png' corner='5,3,5,3'" />
+            				</HorizontalLayout>
+            				
+            			</VerticalLayout>
+            			<!--网络设置-->
+            			<VerticalLayout name="verticallayout_network">
+            				<HorizontalLayout height="40">
+	            				<Label text="绑定网卡: " width="60" height="22"/>
+	            				<!--ComboBox 和 Combo的效果一样-->
+	            				<ComboBox name="combo_adapter" droptype="droplist" width="300" height="22" textpadding="4,1,21,1" tooltip="选择你要绑定的网卡，下次运行有效。" normalimage="file='misc\combo.png' source='0,0,100,22' corner='2,2,20,2'" hotimage="file='misc\combo.png' source='0,22,100,44' corner='2,2,22,2'" pushedimage="file='misc\combo.png' source='0,44,100,66' corner='2,2,22,2'"/>		            				
+	            			</HorizontalLayout>
+	            			<HorizontalLayout height="40">
+	            				<Label text="添加网段: " width="60" height="22"/>
+	            				<Edit name="edit_netsegment" width="150" height="22" bordercolor="#FF9CBDD3" bordersize="1" tiptext="示例:192.168.1.255" />
+	            				<Control width="10"/>
+	            				<Button name="btn_netsegment_add" padding="0,0,0,0" text="添加" width="69" height="24" bkimage="file='misc\btn_normal.png'" focusedimage="misc\btn_focus.png" hotimage="misc\btn_highlight.png" pushedimage="misc\btn_down.png" />
+	            			</HorizontalLayout>
+	            			<HorizontalLayout height="100">
+	            				<Control width="60"/>
+	            				<!--<VerticalLayout bordersize="1" bordercolor="#FF666666" width="150">
+	            					<List name="list_netsegment"  height="80" vscrollbar="true"/>
+	            				</VerticalLayout>-->
+	            				<List name="list_netsegment" width="150" height="80" header="hidden" bkcolor="#FFFFFFFF" bordercolor="#FF9CBDD3" bordersize="1" vscrollbar="true"/>
+	            				<Control width="10"/>
+	            				<Button name="btn_netsegment_del" padding="0,0,0,0" text="删除" width="69" height="24" bkimage="file='misc\btn_normal.png'" focusedimage="misc\btn_focus.png" hotimage="misc\btn_highlight.png" pushedimage="misc\btn_down.png" />
+	            			</HorizontalLayout>
+            			</VerticalLayout>
+            		</TabLayout>
+            		<!--确定、取消-->
+            		<HorizontalLayout height="40">
+            			<Control />
+            			<Button name="btn_ok" padding="0,4,0,0" text="确定" width="69" height="24" bkimage="file='misc\btn_normal.png'" focusedimage="misc\btn_focus.png" hotimage="misc\btn_highlight.png" pushedimage="misc\btn_down.png" />
+            			<Control width="10" />
+	            		<Button name="btn_cancel" padding="0,4,0,0" text="取消" width="69" height="24" bkimage="file='misc\btn_normal.png'" focusedimage="misc\btn_focus.png" hotimage="misc\btn_highlight.png" pushedimage="misc\btn_down.png" />
+	            		<Control width="10" />
+            		</HorizontalLayout>
+            	</VerticalLayout>
+		    </HorizontalLayout>
+		    <VerticalLayout height="1" />
+		</VerticalLayout>
+	</HorizontalLayout>
+</Window>

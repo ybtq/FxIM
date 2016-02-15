@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "FxIM", "src\FxIM.vcproj", "{47791520-4347-489A-9E4B-401CB584D44A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+		UnicodeDebug|Win32 = UnicodeDebug|Win32
+		UnicodeRelease|Win32 = UnicodeRelease|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{47791520-4347-489A-9E4B-401CB584D44A}.Debug|Win32.ActiveCfg = Debug|Win32
+		{47791520-4347-489A-9E4B-401CB584D44A}.Debug|Win32.Build.0 = Debug|Win32
+		{47791520-4347-489A-9E4B-401CB584D44A}.Release|Win32.ActiveCfg = Release|Win32
+		{47791520-4347-489A-9E4B-401CB584D44A}.Release|Win32.Build.0 = Release|Win32
+		{47791520-4347-489A-9E4B-401CB584D44A}.UnicodeDebug|Win32.ActiveCfg = Debug|Win32
+		{47791520-4347-489A-9E4B-401CB584D44A}.UnicodeDebug|Win32.Build.0 = Debug|Win32
+		{47791520-4347-489A-9E4B-401CB584D44A}.UnicodeRelease|Win32.ActiveCfg = Release|Win32
+		{47791520-4347-489A-9E4B-401CB584D44A}.UnicodeRelease|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

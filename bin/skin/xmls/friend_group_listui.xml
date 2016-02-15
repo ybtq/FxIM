@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Window>
+	<FriendGroup inset="5,0,0,0" height="20">
+		<HorizontalLayout>
+			<CheckBox name="folder" width="16" height="12" inset="0,4,0,0" normalimage="Friends\\expland_normal.png" selectedimage="Friends\\expland_down.png"/>
+			<Label name="groupname" />
+		</HorizontalLayout>
+	</FriendGroup>
+</Window>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Window>
+	<RecvFileElement height="60">
+		<VerticalLayout height="52" inset="5,4,5,4">
+			<HorizontalLayout height="20">
+				<Label text="接收:" width="30" />
+				<Label name="label_fname" text="file name" width="145" />
+				<Control />
+				<Label name="label_fsize" align="right" width="60"/>
+			</HorizontalLayout>
+			<Progress name="progress_trans" min="0" max="100" maxheight="12" height="12" bkimage="chatdlg\progress_back.png" foreimage="file='chatdlg\progress_fore.png' corner='10,0,10,0'" />
+			<HorizontalLayout height="20">
+				<Button name="btn_recv" width="30" text="接收" textcolor="0xFF0000FF" hottextcolor="0xFF000000" />
+				<Label name="label_speed" visible="false" width="200" />
+				<Control width="10" />
+				<Button name="btn_saveas" width="45" text="另存为" textcolor="0xFF0000FF" hottextcolor="0xFF000000" />				
+				<Control />
+				<Button name="btn_cancel" width="30" text="取消" textcolor="0xFF0000FF" hottextcolor="0xFF000000"/>
+			</HorizontalLayout>
+		</VerticalLayout>
+	</RecvFileElement> 
+</Window>

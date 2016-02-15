@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Window>
+	<FriendNode name="friendnode" height="26" menu="true">
+		<TabLayout name="tab_friend" selectedid="0" float="true" pos="0,0" width="284" height="26">
+			<!-- 小图标模式 -->
+			<HorizontalLayout height="26">
+				<VerticalLayout width="30">
+					<!--<Button name="btn_avatar" width="20" height="20" />-->
+					<Label name="label_avatar" width="20" height="20" float="true" pos="5,3,0,0"/>
+				</VerticalLayout>
+				<HorizontalLayout >
+					<Label name="lable_nickname" bordersize="0" textcolor="#FF000000" disabledtextcolor="#FF808080" />
+					<Label name="lable_description" bordersize="0" textcolor="#FF808080" />
+				</HorizontalLayout>
+			</HorizontalLayout>
+			
+			<!-- 大图标模式 -->
+			<HorizontalLayout height="52">
+				<VerticalLayout width="50">
+					<!--<Button name="btn_avatar2" width="40" height="40" />-->
+					<Label name="label_avatar2" width="40" height="40" float="true" pos="5,6,0,0"/>
+				</VerticalLayout>
+				<VerticalLayout inset="5,6,0,0">
+					<HorizontalLayout height="20">
+						<Label name="lable_nickname2" bordersize="0" textcolor="#FF000000" disabledtextcolor="#FF808080" />
+					</HorizontalLayout>
+					<HorizontalLayout height="20">
+						<Label name="lable_description2" bordersize="0" textcolor="#FF808080" />
+					</HorizontalLayout>
+				</VerticalLayout>
+			</HorizontalLayout>
+		</TabLayout>
+	</FriendNode>
+</Window>

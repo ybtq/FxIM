@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Window roundcorner="3,3" bktrans="false">
+  	<Font name="微软雅黑" size="12" bold="false" default="true" />
+	<Default name="Menu" value="inset=&quot;4,4,4,4&quot; itemtextpadding=&quot;30,0,0,0&quot; bkimage=&quot;file='menu\menu_bk.png' corner='30,4,8,4'&quot; itemselectedimage=&quot;file='menu\menu_item_selected.png' corner='2,2,2,2'&quot; hole=&quot;false&quot; itemdisabledbkcolor=&quot;#00000000&quot;" />
+	<Default name="MenuElement" value="arrowimage=&quot;file='menu\menu_arrow_normal.png'&quot; checkimage=&quot;file='menu\menu_check.png'&quot; height=&quot;23&quot;" />
+	<Menu>		
+		<MenuElement name="menu_sendmsg" text="发送消息" />
+		<MenuElement name="menu_sendfile" text="发送文件" />
+		<MenuElement name="menu_sendfolder" text="发送文件夹" />
+		<MenuElement separator="true" />
+		<MenuElement name="menu_refresh" text="刷新" />
+	</Menu>
+</Window>

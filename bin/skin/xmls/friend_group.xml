@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Window>
+	<FriendGroup name="friendgroup" inset="5,0,0,0" height="20" itemattr="valign=&quot;vcenter&quot; textpadding=&quot;5,0,0,0&quot; font=&quot;0&quot;" folderattr="padding=&quot;0,4,0,0&quot; width=&quot;16&quot; height=&quot;12&quot; normalimage=&quot;friends\expland_normal.png&quot; selectedimage=&quot;friends\expland_down.png&quot;">
+	</FriendGroup>
+</Window>

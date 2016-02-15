@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Window>
+	<Font name="微软雅黑" size="12" bold="false" default="true" />
+	<Font name="微软雅黑" size="12" bold="true"/>
+	<Default name="VScrollBar" value="button1normalimage=&quot;file='misc\vscrollbar.png' source='0,0,16,16'&quot; button1hotimage=&quot;file='misc\vscrollbar.png' source='16,0,32,16,16'&quot; button1pushedimage=&quot;file='misc\vscrollbar.png' source='32,0,48,16'&quot; button2normalimage=&quot;file='misc\vscrollbar.png' source='0,32,16,48'&quot; button2hotimage=&quot;file='misc\vscrollbar.png' source='16,32,32,48'&quot; button2pushedimage=&quot;file='misc\vscrollbar.png' source='32,32,48,48'&quot; thumbnormalimage=&quot;file='misc\vscrollbar.png' source='0,48,16,64' corner='0,2,0,2'&quot; thumbhotimage=&quot;file='misc\vscrollbar.png' source='16,48,32,64' corner='0,2,0,2'&quot; thumbpushedimage=&quot;file='misc\vscrollbar.png' source='32,48,48,64' corner='0,2,0,2'&quot; bknormalimage=&quot;file='misc\vscrollbar.png' source='0,16,16,32'&quot;" />
+	<FileTrans name="filetrans" vscrollbar="true">
+		
+	</FileTrans>
+</Window>

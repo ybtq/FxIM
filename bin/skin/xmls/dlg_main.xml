@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Window size="250,500" sizebox="4,4,4,4" caption="0,0,0,78" mininfo="200,400" roundcorner="4,4">
+	<Font name="微软雅黑" size="12" bold="false" default="true" />
+	<Font name="微软雅黑" size="12" bold="true"/>
+	<Default name="VScrollBar" value="button1normalimage=&quot;file='misc\vscrollbar.png' source='0,0,16,16'&quot; button1hotimage=&quot;file='misc\vscrollbar.png' source='16,0,32,16,16'&quot; button1pushedimage=&quot;file='misc\vscrollbar.png' source='32,0,48,16'&quot; button2normalimage=&quot;file='misc\vscrollbar.png' source='0,32,16,48'&quot; button2hotimage=&quot;file='misc\vscrollbar.png' source='16,32,32,48'&quot; button2pushedimage=&quot;file='misc\vscrollbar.png' source='32,32,48,48'&quot; thumbnormalimage=&quot;file='misc\vscrollbar.png' source='0,48,16,64' corner='0,2,0,2'&quot; thumbhotimage=&quot;file='misc\vscrollbar.png' source='16,48,32,64' corner='0,2,0,2'&quot; thumbpushedimage=&quot;file='misc\vscrollbar.png' source='32,48,48,64' corner='0,2,0,2'&quot; bknormalimage=&quot;file='misc\vscrollbar.png' source='0,16,16,32'&quot;" />
+	<!--file='bg.png' corner='6,97,6,29' hole='true'  file='All_window_windowBkg.bmp' corner='1,28,1,32'-->
+    <VerticalLayout name="bg" bkimage="file='misc\bg_default.png' corner='608,228,1,1'">
+    	<VerticalLayout name="border" bkimage="file='misc\border.png' corner='5,5,5,5'" inset="1,0,1,1">
+    		<!--标题栏部分-->
+	        <HorizontalLayout height="22">
+	            <VerticalLayout width="60" inset="2,2,0,0">
+	                <Label name="label_title" text="FxIM" textcolor="#FFFFFFFF" font="1"/>
+	            </VerticalLayout>
+	            <Control />
+	            <HorizontalLayout width="95">
+	            	<Button name="btn_skin"  width="28" height="19" maxheight="19" maxwidth="28" normalimage="maindlg\btn_skin_normal.png" hotimage="maindlg\btn_skin_highlight.png" pushedimage="maindlg\btn_skin_down.png" />
+	                <Button name="btn_sys_min"  width="28" height="19" maxheight="19" maxwidth="28" normalimage="misc\btn_mini_normal.png" hotimage="misc\btn_mini_highlight.png" pushedimage="misc\btn_mini_down.png" />
+	                <Button name="btn_sys_close"  width="39" height="19" maxheight="19" maxwidth="39" normalimage="misc\btn_close_normal.png" hotimage="misc\btn_close_highlight.png" pushedimage="misc\btn_close_down.png" />
+	            </HorizontalLayout>
+	        </HorizontalLayout>
+	        <!--头像及用户名部分-->
+	        <HorizontalLayout height="56">
+	        	<VerticalLayout width="58">
+	        		<!--fade属性是改变任意一个控件的透明度，例bkimage="file='xlg.jpg' fade='50'"-->
+					<!--头像按钮的float属性为true，表示绝对位置，pos.x = (48-40)/2 + (58-48)/2，pos.y同理-->
+	        		<Label name="label_avatar" width="40" height="40" pos="9,8" float="true" />
+					<Button name="btn_avatar_border" width="48" height="48" pos="5,4" float="true" normalimage="file='misc\btn_avatar_border.png' source='0,0,48,48' mask='#FFFF00FF'" hotimage="file='misc\btn_avatar_border.png' source='48,0,96,48' mask='#FFFF00FF'" pushedimage="file='misc\btn_avatar_border.png' source='96,0,144,48' mask='#FFFF00FF'" />   			
+        		</VerticalLayout>
+        		<VerticalLayout inset="0,6,0,4">
+	          		<HorizontalLayout height="22">
+	            		<Label name="label_nickname" font="1"/>
+	          		</HorizontalLayout>
+	          		<HorizontalLayout height="22">
+	          			<Label name="label_description" text="192.168.1.2"/>
+	          		</HorizontalLayout>
+        		</VerticalLayout>
+	        </HorizontalLayout>
+	        <!--搜索框部分-->
+	        <HorizontalLayout height="27" bkimage="file='maindlg\search_bk.png'">	        	
+        		<Button name="btn_search_tip" height="27" textpadding="4,5,4,3" text="搜索联系人" align="left" />
+        		<RichEdit name="richedit_search" visible="false" inset="4,4,4,3" height="27" multiline="false" rich="false" />
+        		<!--<Edit name="edit_search" height="27"  bkcolor="#00000000" bordercolor="#FF9CBDD3" bordersize="1" tiptext="搜索联系人" />-->
+        		<Button name="btn_search" showhtml="true" height="27" width="24" text="{i maindlg\btn_search.png}{/i}" />
+      		</HorizontalLayout>      		
+      		<!--好友列表部分-->
+      		<VerticalLayout bkimage="file='misc\glow.png' corner='2,2,2,2'" inset="0,4,0,0">
+		    	<HorizontalLayout>
+              		<FriendList name="friends" header="hidden" itemshowhtml="true" vscrollbar="true"  />
+            	</HorizontalLayout>	          	
+		    </VerticalLayout>
+		    <!--下方部分-->
+		    <VerticalLayout height="29" inset="4,4,0,0">		    	
+		    	<HorizontalLayout>
+		    		<!--<Button name="btn_ok" padding="0,4,0,0" text="主菜单" width="69" height="24" bkimage="file='misc\btn_normal.png'" focusedimage="misc\btn_focus.png" hotimage="misc\btn_highlight.png" pushedimage="misc\btn_down.png" />-->
+              		<!--<Button name="btn_main_menu" width="40" height="40" normalimage="file='maindlg\btn_main_menu_normal.png'" hotimage="file='maindlg\btn_main_menu_highlight.png'" pushedimage="file='maindlg\btn_main_menu_highlight.png'"/>-->
+              		<Button name="btn_main_menu" width="24" height="20" maxheight="20" maxwidth="24" bkimage="file='maindlg\btn_main_menu.png' dest='2,0,22,20'" hotimage="file='misc\btn_hot.png' corner='2,3,2,2'" pushedimage="file='misc\btn_push.png' corner='2,5,2,2'" />
+		    	</HorizontalLayout>		    	
+		    </VerticalLayout>
+	    </VerticalLayout>
+    </VerticalLayout>
+</Window>

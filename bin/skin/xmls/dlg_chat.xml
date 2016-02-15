@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Window size="600,480" mininfo="480,320" caption="0,0,0,50" sizebox="4,4,4,4" roundcorner="4,4">
+  	<Font name="微软雅黑" size="12" bold="false" default="true" />
+  	<Font name="微软雅黑" size="12" bold="true"/>
+	<Default name="VScrollBar" value="button1normalimage=&quot;file='misc\vscrollbar.png' source='0,0,16,16'&quot; button1hotimage=&quot;file='misc\vscrollbar.png' source='16,0,32,16,16'&quot; button1pushedimage=&quot;file='misc\vscrollbar.png' source='32,0,48,16'&quot; button2normalimage=&quot;file='misc\vscrollbar.png' source='0,32,16,48'&quot; button2hotimage=&quot;file='misc\vscrollbar.png' source='16,32,32,48'&quot; button2pushedimage=&quot;file='misc\vscrollbar.png' source='32,32,48,48'&quot; thumbnormalimage=&quot;file='misc\vscrollbar.png' source='0,48,16,64' corner='0,2,0,2'&quot; thumbhotimage=&quot;file='misc\vscrollbar.png' source='16,48,32,64' corner='0,2,0,2'&quot; thumbpushedimage=&quot;file='misc\vscrollbar.png' source='32,48,48,64' corner='0,2,0,2'&quot; bknormalimage=&quot;file='misc\vscrollbar.png' source='0,16,16,32'&quot;" />
+	<!--
+	<Default name="VScrollBar" value="button1normalimage=&quot;file='misc\scrollbar.bmp' source='0,90,16,106' mask='#FFFF00FF'&quot; button1hotimage=&quot;file='misc\scrollbar.bmp' source='18,90,34,106' mask='#FFFF00FF'&quot; button1pushedimage=&quot;file='misc\scrollbar.bmp' source='36,90,52,106' mask='#FFFF00FF'&quot; button1disabledimage=&quot;file='misc\scrollbar.bmp' source='54,90,70,106' mask='#FFFF00FF'&quot; button2normalimage=&quot;file='misc\scrollbar.bmp' source='0,108,16,124' mask='#FFFF00FF'&quot; button2hotimage=&quot;file='misc\scrollbar.bmp' source='18,108,34,124' mask='#FFFF00FF'&quot; button2pushedimage=&quot;file='misc\scrollbar.bmp' source='36,108,52,124' mask='#FFFF00FF'&quot; button2disabledimage=&quot;file='misc\scrollbar.bmp' source='54,108,70,124' mask='#FFFF00FF'&quot; thumbnormalimage=&quot;file='misc\scrollbar.bmp' source='0,126,16,142' corner='2,2,2,2' mask='#FFFF00FF'&quot; thumbhotimage=&quot;file='misc\scrollbar.bmp' source='18,126,34,142' corner='2,2,2,2' mask='#FFFF00FF'&quot; thumbpushedimage=&quot;file='misc\scrollbar.bmp' source='36,126,52,142' corner='2,2,2,2' mask='#FFFF00FF'&quot; thumbdisabledimage=&quot;file='misc\scrollbar.bmp' source='54,126,70,142' corner='2,2,2,2' mask='#FFFF00FF'&quot; railnormalimage=&quot;file='misc\scrollbar.bmp' source='0,144,16,160' corner='2,2,2,2' mask='#FFFF00FF'&quot; railhotimage=&quot;file='misc\scrollbar.bmp' source='18,144,34,160' corner='2,2,2,2' mask='#FFFF00FF'&quot; railpushedimage=&quot;file='misc\scrollbar.bmp' source='36,144,52,160' corner='2,2,2,2' mask='#FFFF00FF'&quot; raildisabledimage=&quot;file='misc\scrollbar.bmp' source='54,144,70,160' corner='2,2,2,2' mask='#FFFF00FF'&quot; bknormalimage=&quot;file='misc\scrollbar.bmp' source='0,162,16,178' corner='2,2,2,2' mask='#FFFF00FF'&quot; bkhotimage=&quot;file='misc\scrollbar.bmp' source='18,162,34,178' corner='2,2,2,2' mask='#FFFF00FF'&quot; bkpushedimage=&quot;file='misc\scrollbar.bmp' source='36,162,52,178' corner='2,2,2,2' mask='#FFFF00FF'&quot; bkdisabledimage=&quot;file='misc\scrollbar.bmp' source='54,162,70,178' corner='2,2,2,2' mask='#FFFF00FF'&quot; " />
+	<Default name="HScrollBar" value="button1normalimage=&quot;file='misc\scrollbar.bmp' source='0,0,16,16' mask='#FFFF00FF'&quot; button1hotimage=&quot;file='misc\scrollbar.bmp' source='18,0,34,16' mask='#FFFF00FF'&quot; button1pushedimage=&quot;file='misc\scrollbar.bmp' source='36,0,52,16' mask='#FFFF00FF'&quot; button1disabledimage=&quot;file='misc\scrollbar.bmp' source='54,0,70,16' mask='#FFFF00FF'&quot; button2normalimage=&quot;file='misc\scrollbar.bmp' source='0,18,16,34' mask='#FFFF00FF'&quot; button2hotimage=&quot;file='misc\scrollbar.bmp' source='18,18,34,34' mask='#FFFF00FF'&quot; button2pushedimage=&quot;file='misc\scrollbar.bmp' source='36,18,52,34' mask='#FFFF00FF'&quot; button2disabledimage=&quot;file='misc\scrollbar.bmp' source='54,18,70,34' mask='#FFFF00FF'&quot; thumbnormalimage=&quot;file='misc\scrollbar.bmp' source='0,36,16,52' corner='2,2,2,2' mask='#FFFF00FF'&quot; thumbhotimage=&quot;file='misc\scrollbar.bmp' source='18,36,34,52' corner='2,2,2,2' mask='#FFFF00FF'&quot; thumbpushedimage=&quot;file='misc\scrollbar.bmp' source='36,36,52,52' corner='2,2,2,2' mask='#FFFF00FF'&quot; thumbdisabledimage=&quot;file='misc\scrollbar.bmp' source='54,36,70,52' corner='2,2,2,2' mask='#FFFF00FF'&quot; railnormalimage=&quot;file='misc\scrollbar.bmp' source='0,54,16,70' corner='2,2,2,2' mask='#FFFF00FF'&quot; railhotimage=&quot;file='misc\scrollbar.bmp' source='18,54,34,70' corner='2,2,2,2' mask='#FFFF00FF'&quot; railpushedimage=&quot;file='misc\scrollbar.bmp' source='36,54,52,70' corner='2,2,2,2' mask='#FFFF00FF'&quot; raildisabledimage=&quot;file='misc\scrollbar.bmp' source='54,54,70,70' corner='2,2,2,2' mask='#FFFF00FF'&quot; bknormalimage=&quot;file='misc\scrollbar.bmp' source='0,72,16,88' corner='2,2,2,2' mask='#FFFF00FF'&quot; bkhotimage=&quot;file='misc\scrollbar.bmp' source='18,72,34,88' corner='2,2,2,2' mask='#FFFF00FF'&quot; bkpushedimage=&quot;file='misc\scrollbar.bmp' source='36,72,52,88' corner='2,2,2,2' mask='#FFFF00FF'&quot; bkdisabledimage=&quot;file='misc\scrollbar.bmp' source='54,72,70,88' corner='2,2,2,2' mask='#FFFF00FF'&quot; " />
+	-->
+	<HorizontalLayout name="bg" bkimage="file='misc\bg_default.png' corner='608,228,1,1'" hole="true">
+		<VerticalLayout bkimage="file='misc\border.png' corner='5,5,5,5'" inset="1,0,1,0" hole="true">
+			<HorizontalLayout height="44">
+				<VerticalLayout width="44" inset="4,4,0,0">
+					<Label name="label_avatar" width="40" height="40"/>
+				</VerticalLayout>
+				<VerticalLayout inset="10,6,2,0">
+					<Label name="label_nickname" height="20" textcolor="#FFFFFFFF" font="1" text="nickname" />
+					<!--<RichEdit name="richedit_description"  multiline="false" width="200" inset="0,0,0,0" textcolor="#FFFFFFFF" height="18" text="test info" enabled="true" rich="false"/>-->
+					<Label name="label_description" height="20" textcolor="#FFFFFFFF" text="description" />
+				</VerticalLayout>
+				<VerticalLayout name="layout_sys" width="94">
+					<Button name="btn_sys_min" float="true" pos="0,0,28,19" width="28" height="19" maxheight="19" maxwidth="28"  normalimage="file='misc\btn_mini_normal.png'" hotimage="misc\btn_mini_highlight.png" pushedimage="misc\btn_mini_down.png"  />
+					<Button name="btn_sys_max" float="true" pos="28,0,56,19" width="28" height="19" maxheight="19" maxwidth="28"  normalimage="file='misc\btn_max_normal.png'" hotimage="misc\btn_max_highlight.png" pushedimage="misc\btn_max_down.png"  />
+	        		<Button name="btn_sys_restore" visible="false" float="true" pos="28,0,56,19" width="28" height="19" maxheight="19" maxwidth="28"  normalimage="file='misc\btn_restore_normal.png'" hotimage="misc\btn_restore_highlight.png" pushedimage="misc\btn_restore_down.png"  />
+					<Button name="btn_sys_close" float="true" pos="56,0,95,19" width="39" height="19" maxheight="19" maxwidth="39"  normalimage="file='misc\btn_close_normal.png'" hotimage="misc\btn_close_highlight.png" pushedimage="misc\btn_close_down.png"  />
+				</VerticalLayout>
+			</HorizontalLayout>
+			<HorizontalLayout height="5" />
+			<HorizontalLayout bkimage="file='chatdlg\jb.png' corner='2,2,2,2'">
+				<VerticalLayout>
+					<HorizontalLayout bordersize="0" bordercolor="#FF999933" inset="5,0,0,0" bkimage="file='chatdlg\chat_mid_bk.png' source='0,10,2,26'">
+	                    <RichEdit name="richedit_view" multiline="true" vscrollbar="true" autovscroll="true" rich="true" readonly="true" menu="true"/>
+					</HorizontalLayout>
+					<HorizontalLayout name="layout_fontbar" bkimage="file='chatdlg\font_bk.bmp'" height="30" inset="4,4,4,4" visible="false">
+						<Combo name="combo_font_name" droptype="droplist" width="100" height="22" textpadding="4,1,21,1"  normalimage="file='misc\combo.png' source='0,0,100,22' corner='2,2,20,2'" hotimage="file='misc\combo.png' source='0,22,100,44' corner='2,2,22,2'" pushedimage="file='misc\combo.png' source='0,44,100,66' corner='2,2,22,2'">
+							<ListLabelElement text="微软雅黑" selected="true" height="20"/>
+							<ListLabelElement text="宋体" height="20" />
+							<ListLabelElement text="黑体" height="20" />
+							<ListLabelElement text="幼圆" height="20" />
+							<ListLabelElement text="楷体" height="20" />
+				        </Combo>
+	          			<Combo name="combo_font_size" droptype="droplist" width="50" height="22" textpadding="4,1,21,1" normalimage="file='misc\combo.png' source='0,0,100,22' corner='2,2,20,2'" hotimage="file='misc\combo.png' source='0,22,100,44' corner='2,2,22,2'" pushedimage="file='misc\combo.png' source='0,44,100,66' corner='2,2,22,2'">
+							<ListLabelElement text="8" height="20" />
+							<ListLabelElement text="9" selected="true" height="20" />
+							<ListLabelElement text="10" height="20" />
+							<ListLabelElement text="11" height="20" />
+							<ListLabelElement text="12" height="20" />
+							<ListLabelElement text="13" height="20" />
+				            <ListLabelElement text="14" height="20" />
+				            <ListLabelElement text="15" height="20" />
+				            <ListLabelElement text="16" height="20" />
+				            <ListLabelElement text="17" height="20" />
+				            <ListLabelElement text="18" height="20" />
+				            <ListLabelElement text="19" height="20" />
+				            <ListLabelElement text="20" height="20" />
+				            <ListLabelElement text="21" height="20" />
+				            <ListLabelElement text="22" height="20" />
+						</Combo>
+						<Control width="5"/>
+						<Option name="option_bold" showhtml="true" width="22" height="22" text="{i chatdlg\bold.png}{/i}" hotimage="file='misc\btn_hot.png' corner='2,3,2,2'" selectedimage="file='misc\btn_push.png' corner='2,5,2,2'"  />
+						<Option name="option_italic" showhtml="true" width="22" height="22" text="{i chatdlg\italic.png}{/i}" hotimage="file='misc\btn_hot.png' corner='2,3,2,2'" selectedimage="file='misc\btn_push.png' corner='2,5,2,2'"  />
+						<Option name="option_underline" showhtml="true" width="22" height="22" text="{i chatdlg\underline.png}{/i}" hotimage="file='misc\btn_hot.png' corner='2,3,2,2'" selectedimage="file='misc\btn_push.png' corner='2,5,2,2'"  />
+						<Button name="btn_color" width="22" height="22" bkimage="file='chatdlg\color.png' dest='3,3,19,19'" hotimage="file='misc\btn_hot.png' corner='2,3,2,2'" pushedimage="file='misc\btn_push.png' corner='2,5,2,2'"  />
+					</HorizontalLayout>
+					<HorizontalLayout height="28" inset="2,4,2,4">
+						<Option name="option_font" width="24" height="20" maxheight="20" maxwidth="24" bkimage="file='chatdlg\icon_font.png' dest='2,0,22,20'" hotimage="file='misc\btn_hot.png' corner='2,3,2,2'" selectedimage="file='misc\btn_push.png' corner='2,5,2,2'"  />
+						<Control width="5"/>
+	          			<Option name="option_emotion" width="24" height="20" maxheight="20" maxwidth="24" bkimage="file='chatdlg\icon_face.png' dest='2,0,22,20'" hotimage="file='misc\btn_hot.png' corner='2,3,2,2'" selectedimage="file='misc\btn_push.png' corner='2,5,2,2'"  />
+						<Control width="5"/>
+						<Button name="btn_image" width="24" height="20" maxheight="20" maxwidth="24" bkimage="file='chatdlg\icon_pic.png' dest='2,0,22,20'" hotimage="file='misc\btn_hot.png' corner='2,3,2,2'" pushedimage="file='misc\btn_push.png' corner='2,5,2,2'"  />
+						<Control width="5"/>
+						<Button name="btn_file" width="24" height="20" maxheight="20" maxwidth="24" bkimage="file='chatdlg\icon_file.png' dest='2,0,22,20'" hotimage="file='misc\btn_hot.png' corner='2,3,2,2'" pushedimage="file='misc\btn_push.png' corner='2,5,2,2'"  />
+						<Button name="btn_file_right" width="8" height="20" maxheight="20" maxwidth="8" bkimage="file='chatdlg\btn_picbar_right.png'" hotimage="file='misc\btn_hot.png' corner='2,3,2,2'" pushedimage="file='misc\btn_push.png' corner='2,5,2,2'"  />
+	          			<Control width="5"/>
+	          			<Button name="btn_screenshots" width="24" height="20" maxheight="20" maxwidth="24" bkimage="file='chatdlg\icon_screenshots.png' dest='2,1,20,19'" hotimage="file='misc\btn_hot.png' corner='2,3,2,2'" pushedimage="file='misc\btn_push.png' corner='2,5,2,2'"  />
+	          			<Control />
+	          			<Option name="option_msglog" width="76" height="20" maxheight="20" maxwidth="76" text="消息记录" textpadding="20,0,0,0" foreimage="file='chatdlg\note1.png' dest='0,0,20,20'" hotimage="file='misc\btn_hot.png' corner='2,3,2,2'" selectedimage="file='misc\btn_push.png' corner='2,5,2,2'"  />
+					</HorizontalLayout>
+					<VerticalLayout height="80" bkcolor="#FFFFFFFF" inset="5,0,0,0">
+						<Button name="btn_fileshare" visible="false" height="20" normalimage="file='misc\btn_normal.png' corner='5,2,5,2'" focusedimage="file='misc\btn_focus.png' corner='5,2,5,2'" hotimage="file='misc\btn_highlight.png' corner='5,2,5,2'" pushedimage="file='misc\btn_down.png' corner='5,2,5,2'" />
+	          			<RichEdit name="richedit_input" multiline="true" vscrollbar="true" autovscroll="true" enabled="true" rich="true" readonly="false" wantreturn="true" wantctrlreturn="true" menu="true"/>
+					</VerticalLayout>
+					<HorizontalLayout height="32">
+	          			<Control />
+						<Button name="btn_close" padding="0,4,0,0" text="关闭" width="69" height="24" bkimage="file='chatdlg\btn_normal.png'" hotimage="chatdlg\btn_highlight.png" pushedimage="chatdlg\btn_down.png"  />
+						<Control width="5"/>
+						<Button name="btn_send_left" padding="0,4,0,0" text="发送" width="61" height="24" bkimage="chatdlg\sendbutton\btnleft_normal.PNG" hotimage="chatdlg\sendbutton\btnleft_highlight.png" pushedimage="chatdlg\sendbutton\btnleft_down.png"  />
+						<Button name="btn_send_right" padding="0,4,0,0" width="20" height="24" bkimage="chatdlg\sendbutton\btnright_normal.PNG" hotimage="chatdlg\sendbutton\btnright_highlight.png" pushedimage="chatdlg\sendbutton\btnright_down.png"  />
+					</HorizontalLayout>
+				</VerticalLayout>
+				<!--<Button name="btn_flex" height="293" width="8" align="center" hotimage="chatdlg\aio_flexleft_normal.png" />-->
+				<VerticalLayout name="vlayout_rightpanel" width="150" padding="2,2,0,2" bkimage="file='chatdlg\ChatFrame_GroupDownDockPanel_background.png' corner='2,22,2,2'" borderround="3,3">
+					<HorizontalLayout name="hlayout_option" height="22" width="150" />
+					<TabLayout name="tlayout_panel" selected="0" inset="2,2,2,2">
+						<VerticalLayout name="vlayout_personal" inset="0,0,0,0">
+							<HorizontalLayout height="30">
+								<Label text="昵称: " align="right" width="50"/>
+								<Label name="label_personal_nickname" text="ybt"/>
+							</HorizontalLayout>
+							<HorizontalLayout height="30">
+								<Label text="工作组: " align="right" width="50"/>
+								<Label name="label_personal_workgroup" text="workgroup"/>
+							</HorizontalLayout>
+							<HorizontalLayout height="30">
+								<Label text="IP地址: " align="right" width="50"/>
+								<Label name="label_personal_addr" text="192.168.42.1"/>
+							</HorizontalLayout>
+						</VerticalLayout>
+						<!--<FileTrans name="filetrans" vscrollbar="true" header="hidden"/>-->
+						<VerticalLayout name="vlayout_msglog" >
+							<RichEdit name="richedit_msglog" multiline="true" vscrollbar="true" autovscroll="true" rich="true" readonly="true" menu="true"/>
+						</VerticalLayout>
+					</TabLayout>
+				</VerticalLayout>
+				<Control width="2"/>
+			</HorizontalLayout>
+			<Control height="1" />
+		</VerticalLayout>
+	</HorizontalLayout>
+</Window>

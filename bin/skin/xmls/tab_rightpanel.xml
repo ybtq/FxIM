@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Window>
+	<Default name="Option" value="normalimage=&quot;file='chatdlg\\option_tab_normal.png'&quot; hotimage=&quot;file='chatdlg\\option_tab_hover.png'&quot; selectedimage=&quot;file='chatdlg\\option_tab_selected.png'&quot; group=&quot;group_panel&quot;" />
+	<Default name="Button" value="width=&quot;11&quot; height=&quot;11&quot; normalimage=&quot;file='chatdlg\\modal_close_normal.png'&quot; hotimage=&quot;file='chatdlg\\modal_close_hover.png'&quot; pushedimage=&quot;file='chatdlg\\modal_close_press.png'&quot;" />
+	<Tab name="tab_panel" />
+</Window>

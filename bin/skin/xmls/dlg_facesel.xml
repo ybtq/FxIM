@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Window size="432,236" mininfo="432,236" caption="0,0,0,0" sizebox="0,0,0,0" roundcorner="0,0,0,0">
+  	<VerticalLayout bordercolor="#FF4879B8" bordersize="1" bkcolor="#FFE9F6FE" inset="6,6,6,6">
+    	<FaceCtrl name="facectrl1" bkcolor="#FFFFFFFF"/>
+	</VerticalLayout>
+</Window>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Window roundcorner="2,2">
+	<VerticalLayout name="panel_filetrans" bkimage="file='chatdlg\ChatFrame_GroupDownDockPanel_background.bmp' corner='2,20,2,2'" >
+		<HorizontalLayout height="22">
+			<Control />
+			<Button name="btn_close" width="11" height="11"  normalimage="chatdlg\modal_close_normal.png" hotimage="chatdlg\modal_close_hover.png" pushedimage="chatdlg\modal_close_press.png"  />
+			<Control width="5" />
+		<HorizontalLayout/>
+		<List name="list_filetrans">
+			
+		</List>
+	</VerticalLayout>
+</Window>
