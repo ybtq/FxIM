@@ -1,0 +1,3 @@
+[submodule "ThirdParty/Duilib"]
+	path = ThirdParty/Duilib
+	url = https://github.com/ybtq/Duilib.git

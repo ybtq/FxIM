@@ -45,7 +45,7 @@ int APIENTRY WinMain(HINSTANCE hInstance, HINSTANCE /*hPrevInstance*/, LPTSTR lp
 
 	if (!DllRegisterServer(_T("ImageOleCtrl.dll")))
 	{
-		::MessageBox(NULL, _T("COM×é¼ş×¢²áÊ§°Ü£¡"), _T("ÌáÊ¾"), MB_OK);
+		::MessageBox(NULL, _T("COMç»„ä»¶æ³¨å†Œå¤±è´¥ï¼"), _T("æç¤º"), MB_OK);
 		return 0;
 	}
 
