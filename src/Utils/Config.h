@@ -20,9 +20,6 @@
 struct Config
 {
 public:
-	Config();
-	~Config();
-
 	BOOL		ReadConfig();
 	BOOL		WriteConfig(int nFlag = CONFIG_ALL);
 
@@ -114,10 +111,15 @@ private:
 	void	ReadSkin(TiXmlElement* rootElement);
 	void	WriteSkin(TiXmlElement* rootElement);
 private:
+	Config();
+	~Config();
 
 	void	Init();
 	BOOL	GetAdapters();
 	void	MatchAdapter();
 	BOOL	IsByteNull(BYTE* b, int len);
+
+	DECLARE_SINGLETON_CLASS(Config)
 };
+
 #endif //_CONFIG_H_

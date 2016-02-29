@@ -14,9 +14,10 @@ typedef std::vector<MsgBuf*>		VecMsgBuf;
 
 class CMainDlg : public WindowImplBase, public SkinChangedReceiver
 {
-public:
+private:
 	CMainDlg();
 	~CMainDlg();
+	DECLARE_SINGLETON_CLASS(CMainDlg)
 public:
 	LPCTSTR GetWindowClassName() const;
 	virtual void OnFinalMessage(HWND hWnd);
@@ -95,6 +96,5 @@ private:
 public:
 	static MapChatDlg	m_mapChatDlg;
 };
-
 
 #endif  //_MAINDLG_H_

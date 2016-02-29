@@ -2,6 +2,10 @@
 
 class CShareMng 
 {
+private:
+	CShareMng();
+	~CShareMng();
+	DECLARE_SINGLETON_CLASS(CShareMng)
 public:
 	enum			{ TRANS_INIT, TRANS_BUSY, TRANS_DONE };
 protected:
@@ -15,9 +19,6 @@ protected:
 
 
 public:
-	CShareMng();
-	~CShareMng();
-
 	ShareInfo		*CreateShare(int packetNo);					// for send shareinfo.
 	ShareInfo		*Search(int packetNo);
 	void			DestroyShare(ShareInfo *info);

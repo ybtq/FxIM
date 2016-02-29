@@ -9,18 +9,18 @@ class Singleton
 public:
     static T* getInstance()
 	{
-        if (_instance.get() == NULL)
+        if (m_pInstance.get() == NULL)
         {
-			if (_mutex == NULL)
+			if (m_hMutex == NULL)
 			{
-				_mutex = CreateMutex (NULL, FALSE, NULL);
+				m_hMutex = CreateMutex (NULL, FALSE, NULL);
 			}
-			WaitForSingleObject(_mutex, INFINITE);
-            if (_instance.get() == NULL)
-                _instance.reset(new T);
-            ReleaseMutex(_mutex);
+			WaitForSingleObject(m_hMutex, INFINITE);
+            if (m_pInstance.get() == NULL)
+                m_pInstance.reset(new T);
+            ReleaseMutex(m_hMutex);
 		}
-        return _instance.get();
+        return m_pInstance.get();
 	}	
 private:
     Singleton(){}
@@ -28,15 +28,15 @@ private:
     Singleton(const Singleton&);
     Singleton& operator= (const Singleton &);
 
-    static std::auto_ptr<T> _instance;
-    static HANDLE _mutex;
+	static HANDLE			m_hMutex;
+    static std::auto_ptr<T> m_pInstance;
 };
 
 template <class T>
-std::auto_ptr<T> Singleton<T>::_instance;
+HANDLE Singleton<T>::m_hMutex = NULL;
 
 template <class T>
-HANDLE Singleton<T>::_mutex = NULL;
+std::auto_ptr<T> Singleton<T>::m_pInstance;
 
 #define DECLARE_SINGLETON_CLASS(type) \
 	friend class std::auto_ptr<type>; \

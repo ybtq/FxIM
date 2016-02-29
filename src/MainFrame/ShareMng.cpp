@@ -915,7 +915,7 @@ BOOL CShareMng::RecvFile(RecvFileObj* recvObj)
 		if (::WriteFile(recvObj->hFile, recvObj->recvBuf, wresid, &wsize, 0) != TRUE 
 			|| wresid != (int)wsize)
 		{
-			return	::MessageBox(NULL, MSGWRITEFAIL_STR, MSGCAPTION_STR, MB_ICONERROR | MB_OK), FALSE;
+			return ::MessageBox(NULL, MSGWRITEFAIL_STR, MSGCAPTION_STR, MB_ICONERROR | MB_OK), FALSE;
 		}
 		recvObj->woffset += wresid;
 	}
@@ -984,12 +984,12 @@ BOOL CShareMng::RecvDirFile(RecvFileObj* recvObj)
 					recvObj->fileInfo->Fname() : recvObj->curFileInfo.Fname();
 
 				if (MakePath(buf, recvObj->path, fname) >= MAX_PATH)
-					return	/*MessageBox(buf, PATHTOOLONG_MSGSTR),*/ FALSE;
+					return FALSE;
 				if (IsSafePath(buf, fname) == FALSE)
-					return	FALSE;
+					return FALSE;
 
 				if (::CreateDirectory(buf, NULL) == FALSE)
-					return	FALSE;
+					return FALSE;
 				strncpy(recvObj->path, buf, MAX_PATH);
 				recvObj->dirCnt++;
 			}

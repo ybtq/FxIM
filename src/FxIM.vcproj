@@ -335,6 +335,26 @@
 					>
 				</File>
 			</Filter>
+			<Filter
+				Name="ControlEx"
+				>
+				<File
+					RelativePath=".\ControlEx\UIFileTrans.cpp"
+					>
+				</File>
+				<File
+					RelativePath=".\ControlEx\UIFriends.cpp"
+					>
+				</File>
+				<File
+					RelativePath=".\ControlEx\UIListCommonDefine.cpp"
+					>
+				</File>
+				<File
+					RelativePath=".\ControlEx\UIMenu.cpp"
+					>
+				</File>
+			</Filter>
 		</Filter>
 		<Filter
 			Name="Header Files"
@@ -446,6 +466,30 @@
 				</File>
 				<File
 					RelativePath=".\Utils\Utils.h"
+					>
+				</File>
+			</Filter>
+			<Filter
+				Name="ControlEx"
+				>
+				<File
+					RelativePath=".\ControlEx\observer_impl_base.hpp"
+					>
+				</File>
+				<File
+					RelativePath=".\ControlEx\UIFileTrans.h"
+					>
+				</File>
+				<File
+					RelativePath=".\ControlEx\UIFriends.hpp"
+					>
+				</File>
+				<File
+					RelativePath=".\ControlEx\UIListCommonDefine.hpp"
+					>
+				</File>
+				<File
+					RelativePath=".\ControlEx\UIMenu.h"
 					>
 				</File>
 			</Filter>
@@ -579,46 +623,6 @@
 					>
 				</File>
 			</Filter>
-		</Filter>
-		<Filter
-			Name="ControlEx"
-			>
-			<File
-				RelativePath=".\ControlEx\observer_impl_base.hpp"
-				>
-			</File>
-			<File
-				RelativePath=".\ControlEx\UIFileTrans.cpp"
-				>
-			</File>
-			<File
-				RelativePath=".\ControlEx\UIFileTrans.h"
-				>
-			</File>
-			<File
-				RelativePath=".\ControlEx\UIFriends.cpp"
-				>
-			</File>
-			<File
-				RelativePath=".\ControlEx\UIFriends.hpp"
-				>
-			</File>
-			<File
-				RelativePath=".\ControlEx\UIListCommonDefine.cpp"
-				>
-			</File>
-			<File
-				RelativePath=".\ControlEx\UIListCommonDefine.hpp"
-				>
-			</File>
-			<File
-				RelativePath=".\ControlEx\UIMenu.cpp"
-				>
-			</File>
-			<File
-				RelativePath=".\ControlEx\UIMenu.h"
-				>
-			</File>
 		</Filter>
 		<File
 			RelativePath=".\BLOWFISH.H2"

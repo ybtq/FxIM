@@ -11,10 +11,11 @@
 
 class CMsgMng
 {
-public:
+private:
 	CMsgMng();
 	virtual ~CMsgMng();
-	
+	DECLARE_SINGLETON_CLASS(CMsgMng)
+public:	
 	BOOL AsyncSelect(HWND hWnd);
 	BOOL WSockInit(void);
 	void WSockTerm(void);      //terminate(жуж╧)
