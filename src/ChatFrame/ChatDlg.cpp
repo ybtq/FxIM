@@ -22,6 +22,7 @@ CChatDlg::CChatDlg(Host* pHost)
  , m_pBtnSysMax(NULL)
  , m_pOptionFont(NULL)
  , m_pOptionEmotion(NULL)
+ , m_pBtnImage(NULL)
  , m_pLayoutFontbar(NULL)
  , m_pRichEditInput(NULL)
  , m_pRichEditView(NULL)
@@ -113,9 +114,13 @@ void CChatDlg::InitWindow()
 	m_pBtnSysMax = static_cast<CButtonUI*>(m_PaintManager.FindControl(kButtonSysMaxName));
 	m_pOptionFont = static_cast<COptionUI*>(m_PaintManager.FindControl(_T("option_font")));
 	m_pOptionEmotion = static_cast<COptionUI*>(m_PaintManager.FindControl(_T("option_emotion")));
+	m_pBtnImage = static_cast<CButtonUI*>(m_PaintManager.FindControl(_T("btn_image")));
 	m_pLayoutFontbar = static_cast<CHorizontalLayoutUI*>(m_PaintManager.FindControl(_T("layout_fontbar")));
 	m_pRichEditInput = static_cast<CRichEditUI*>(m_PaintManager.FindControl(_T("richedit_input")));
 	m_pRichEditView = static_cast<CRichEditUI*>(m_PaintManager.FindControl(_T("richedit_view")));
+
+	// 由于第三方的OLE控件，在接收图片后，替换图片内容时会导致崩溃，因此先暂时屏蔽发图片的功能
+	m_pBtnImage->SetEnabled(false);
 
 	// 字体布局控件
 	m_pComboFontName = static_cast<CComboBoxUI*>(m_PaintManager.FindControl(_T("combo_font_name")));
@@ -124,21 +129,13 @@ void CChatDlg::InitWindow()
 	m_pOptionItalic = static_cast<COptionUI*>(m_PaintManager.FindControl(_T("option_italic")));
 	m_pOptionUnderline = static_cast<COptionUI*>(m_PaintManager.FindControl(_T("option_underline")));
 
-	
-
 	m_pBtnFileShare = static_cast<CButtonUI*>(m_PaintManager.FindControl(_T("btn_fileshare")));
 
 	m_pVLayoutRightPanel = static_cast<CVerticalLayoutUI*>(m_PaintManager.FindControl(_T("vlayout_rightpanel")));
-//	m_pTabRightPanel = static_cast<CTabUI*>(m_PaintManager.FindControl(_T("tab_rightpanel")));
 	m_pHLayoutOption = static_cast<CHorizontalLayoutUI*>(m_PaintManager.FindControl(_T("hlayout_option")));
 	m_pTLayoutPanel = static_cast<CTabLayoutUI*>(m_PaintManager.FindControl(_T("tlayout_panel")));
-//	m_pOptionPersonal = static_cast<COptionUI*>(m_PaintManager.FindControl(_T("option_personal")));
 	m_pVLayoutPersonal = static_cast<CVerticalLayoutUI*>(m_PaintManager.FindControl(_T("vlayout_personal")));
-// 	if (m_pHLayoutOption && m_pTLayoutPanel) 
-// 	{
-// 		m_pTabRightPanel->SetTabLayout(m_pLayoutModal);
-// 		m_pTabRightPanel->AddPage(_T("个人信息"), m_pLayoutPersonal, false);
-// 	}
+
 	AddPanel(_T("个人信息"), m_pVLayoutPersonal);
 	
 	m_pFileTrans = static_cast<CFileTransUI*>(m_PaintManager.FindControl(_T("filetrans")));
@@ -1751,8 +1748,6 @@ bool CChatDlg::AddPanel(LPCTSTR pszText, CControlUI* pControlPanel, bool bHasClo
 	pOption->SetHotImage(_T("chatdlg\\option_tab_hover.png"));
 	pOption->SetSelectedImage(_T("chatdlg\\option_tab_selected.png"));
 	pOption->SetGroup(_T("group_panel"));
-	// MakeDelegate的函数返回值必须是bool型 [12/25/2014 ybt]
-//	pOption->OnNotify += MakeDelegate(this, &CTabUI::OnSelect);
 
 	if (m_pTLayoutPanel->FindSubControl(pControlPanel->GetName()) == NULL)
 	{
@@ -1782,8 +1777,6 @@ bool CChatDlg::AddPanel(LPCTSTR pszText, CControlUI* pControlPanel, bool bHasClo
 		pButtonClose->SetPushedImage(_T("chatdlg\\close_down.png"));
 		pButtonClose->SetFixedWidth(15);
 		pButtonClose->SetFixedHeight(15);
-
-//		pButtonClose->OnNotify += MakeDelegate(this, &CTabUI::OnCloseTab);
 	}
 	
 

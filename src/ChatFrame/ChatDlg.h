@@ -119,6 +119,7 @@ private:
 	CButtonUI*				m_pBtnSysMax;
 	COptionUI*				m_pOptionFont;
 	COptionUI*				m_pOptionEmotion;
+	CButtonUI*				m_pBtnImage;
 	CHorizontalLayoutUI*	m_pLayoutFontbar;
 	CRichEditUI*			m_pRichEditInput;
 	CRichEditUI*			m_pRichEditView;
@@ -142,9 +143,6 @@ private:
 	CVerticalLayoutUI*		m_pVLayoutPersonal;
 	CFileTransUI*			m_pFileTrans;
 	MapControl				m_mapButtonClose;
-
-	// 右侧个人信息
-//	CTabUI*					m_pTabRightPanel;
 };
 
 
