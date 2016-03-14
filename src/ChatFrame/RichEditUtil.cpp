@@ -336,8 +336,16 @@ BOOL RichEdit_InsertFace(HWND hWnd, LPCTSTR lpszFileName, int nFaceId,
 		return FALSE;
 
 	//  [12/3/2014 ybt]
-	USES_CONVERSION;
-	bstrFileName = ::SysAllocString(T2COLE(lpszFileName));
+#if defined(UNICODE) || defined(_UNICODE)
+	bstrFileName = ::SysAllocString(lpszFileName);
+#else
+	LPCWSTR pszFileNameW = AnsiToUnicode(lpszFileName);
+	if (pszFileNameW != NULL)
+	{
+		bstrFileName = ::SysAllocString(pszFileNameW);
+		delete pszFileNameW;
+	}	
+#endif
 	if (NULL == bstrFileName)
 		return FALSE;
 
@@ -452,8 +460,16 @@ void RichEdit_GetText(HWND hWnd, tstring& strText)
 						strText += _T("/c[\"");
 						BSTR bstrFileName = NULL;
 						pImageOle->GetFileName(&bstrFileName);
-						USES_CONVERSION;
-						strText = strText + W2T(bstrFileName);				//  [12/3/2014 ybt]
+#if defined(UNICODE) || defined(_UNICODE)
+						strText = strText + bstrFileName;
+#else
+						LPCSTR pszFileNameA = UnicodeToAnsi(bstrFileName);
+						if (pszFileNameA != NULL)
+						{
+							strText = strText + pszFileNameA;				//  [12/3/2014 ybt]
+							delete pszFileNameA;
+						}
+#endif
 						::SysFreeString(bstrFileName);
 						strText += _T("\"]");
 					}

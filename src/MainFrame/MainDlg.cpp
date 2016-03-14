@@ -1098,8 +1098,12 @@ void CMainDlg::MsgGetAvatar(MsgBuf *msg)
 		char	szShare[MAX_PATH] = {0};
 
 #if (defined(UNICODE) || defined(_UNICODE))
-		USES_CONVERSION;
-		strncpy(szMsg, W2A(::PathFindFileName(pCfg->szAvatar)), MAX_PATH);
+		LPCSTR pszAvatarFileNameA = UnicodeToAnsi(PathFindFileName(pCfg->szAvatar));
+		if (pszAvatarFileNameA != NULL)
+		{
+			strncpy(szMsg, pszAvatarFileNameA, MAX_PATH);
+			delete pszAvatarFileNameA;
+		}
 #else
 		strncpy(szMsg, ::PathFindFileName(pCfg->szAvatar), MAX_PATH);
 #endif
@@ -1107,8 +1111,12 @@ void CMainDlg::MsgGetAvatar(MsgBuf *msg)
 		{
 			ShareInfo*	shareInfo = pShareMng->CreateShare(pMsgMng->MakePacketNo());
 #if (defined(UNICODE) || defined(_UNICODE))
-			USES_CONVERSION;
-			pShareMng->AddFileShare(shareInfo, W2A(pCfg->szAvatar), IM_FILE_AVATAR);
+			LPCSTR pszAvatarA = UnicodeToAnsi(pCfg->szAvatar);
+			if (pszAvatarA != NULL)
+			{
+				pShareMng->AddFileShare(shareInfo, pszAvatarA, IM_FILE_AVATAR);
+				delete pszAvatarA;
+			}
 #else
 			pShareMng->AddFileShare(shareInfo, pCfg->szAvatar, IM_FILE_AVATAR);
 #endif
@@ -1142,8 +1150,12 @@ void CMainDlg::MsgAnsAvatar(MsgBuf *msg)
 	Config*	pCfg = Singleton<Config>::getInstance();
 
 #if (defined(UNICODE) || defined(_UNICODE))
-	USES_CONVERSION;
-	wsprintfW(szAvatar, L"%s%s", pCfg->szAvatarSaveDir, A2W(msg->msgBuf));
+	LPCWSTR pszMsgBufW = AnsiToUnicode(msg->msgBuf);
+	if (pszMsgBufW != NULL)
+	{
+		wsprintfW(szAvatar, L"%s%s", pCfg->szAvatarSaveDir, pszMsgBufW);
+		delete pszMsgBufW;
+	}
 #else
 	wsprintfA(szAvatar, "%s%s", pCfg->szAvatarSaveDir, msg->msgBuf);
 #endif
@@ -1156,8 +1168,12 @@ void CMainDlg::MsgAnsAvatar(MsgBuf *msg)
 			return ;
 		}
 #if (defined(UNICODE) || defined(_UNICODE))
-		USES_CONVERSION;
-		wcsncpy(pHost->avatar, szAvatar, MAX_PATH);
+		LPCSTR pszAvatarA = AnsiToUnicode(szAvatar);
+		if (pszAvatarA != NULL)
+		{
+			strncpy(pHost->avatar, pszAvatarA, MAX_PATH);
+			delete pszAvatarA;
+		}
 #else
 		strncpy(pHost->avatar, szAvatar, MAX_PATH);
 #endif

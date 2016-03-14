@@ -328,8 +328,12 @@ LRESULT CChatDlg::OnNotify(UINT uMsg, WPARAM wParam, LPARAM lParam, BOOL& bHandl
 #if (defined(UNICODE) || defined(_UNICODE))
 			AddMsgToRichEditInput(pszTextW);
 #else
-			USES_CONVERSION;
-			AddMsgToRichEditInput(W2A(pszTextW));
+			LPCSTR pszTextA = UnicodeToAnsi(pszTextW);
+			if (pszTextA != NULL)
+			{
+				AddMsgToRichEditInput(pszTextA);
+				delete pszTextA;
+			}
 #endif			
 		}
 		if (pTextServices != NULL)
@@ -662,9 +666,13 @@ LRESULT CChatDlg::OnRecvObjEvent(UINT uMsg, WPARAM wParam, LPARAM lParam, BOOL& 
 					if (!::PathFileExists(szBuf)) {
 						wsprintf(szBuf, _T("%s\\misc\\image\\errorBmp.gif"), m_PaintManager.GetInstancePath());
 					}
-					USES_CONVERSION;
+					LPCWSTR pszBufW = AnsiToUnicode(szBuf);
 					DUI__Trace(_T("ImageOle Update file : %s"), szBuf);
-					pImageOle->LoadFromFile(A2W(szBuf));
+					if (pszBufW != NULL)
+					{
+						pImageOle->LoadFromFile((BSTR)pszBufW);
+						delete pszBufW;
+					}
 					pImageOle->OnViewChange();
 				}
 			}
@@ -711,11 +719,17 @@ void CChatDlg::_RichEdit_ReplaceSel(CRichEditUI * pRichEdit, LPCTSTR lpszNewText
 		cfLite.crText, cfLite.bBold, cfLite.bItalic, 
 		cfLite.bUnderLine, FALSE, nStartIndent);
 #else
-	USES_CONVERSION;
-	RichEdit_ReplaceSel(pTextServices, A2W(lpszNewText), 
-		A2W(cfLite.szFaceName), cfLite.nSize, 
-		cfLite.crText, cfLite.bBold, cfLite.bItalic, 
-		cfLite.bUnderLine, FALSE, nStartIndent);
+	LPCWSTR pszNewTextW = AnsiToUnicode(lpszNewText);
+	LPCWSTR pszFaceNameW = AnsiToUnicode(cfLite.szFaceName);
+	if (pszNewTextW != NULL && pszFaceNameW != NULL)
+	{
+		RichEdit_ReplaceSel(pTextServices, pszNewTextW, 
+			pszFaceNameW, cfLite.nSize, 
+			cfLite.crText, cfLite.bBold, cfLite.bItalic, 
+			cfLite.bUnderLine, FALSE, nStartIndent);
+		delete pszNewTextW;
+		delete pszFaceNameW;
+	}
 #endif
 	
 	pTextServices->Release();
@@ -740,9 +754,13 @@ BOOL CChatDlg::_RichEdit_InsertFace(CRichEditUI * pRichEdit, LPCTSTR lpszFileNam
 		bRet = RichEdit_InsertFace(pTextServices, pTextHost, 
 			lpszFileName, nFaceId, nFaceIndex, RGB(255,255,255), TRUE, 40, ppImageOle);
 #else
-		USES_CONVERSION;
-		bRet = RichEdit_InsertFace(pTextServices, pTextHost, 
-			A2W(lpszFileName), nFaceId, nFaceIndex, RGB(255,255,255), TRUE, 40, ppImageOle);
+		LPCWSTR pszFileNameW = AnsiToUnicode(lpszFileName);
+		if (pszFileNameW != NULL)
+		{
+			bRet = RichEdit_InsertFace(pTextServices, pTextHost, 
+				pszFileNameW, nFaceId, nFaceIndex, RGB(255,255,255), TRUE, 40, ppImageOle);
+			delete pszFileNameW;
+		}
 #endif	
 	}
 
@@ -951,9 +969,12 @@ void CChatDlg::AddMsgToRichEditView(LPCTSTR lpText, LPCTSTR lpName, time_t msgTi
 	RichEdit_ReplaceSel(pTextServices, cText, 
 		L"宋体", 9, crName, FALSE, FALSE, FALSE, FALSE, 0);
 #else
-	USES_CONVERSION;
-	RichEdit_ReplaceSel(pTextServices, A2W(cText), 
-		L"宋体", 9, crName, FALSE, FALSE, FALSE, FALSE, 0);
+	LPCWSTR pszTextW = AnsiToUnicode(cText);
+	if (pszTextW != NULL)
+	{
+		RichEdit_ReplaceSel(pTextServices, pszTextW, 
+			L"宋体", 9, crName, FALSE, FALSE, FALSE, FALSE, 0);
+	}
 #endif
 	
 	//m_pRichEditView->SetAutoURLDetect(true);
@@ -1287,9 +1308,13 @@ void CChatDlg::_RichEdit_SetFont(CRichEditUI* pRichEdit, CharFormatLite& cfLite)
 	RichEdit_SetDefFont(pTextServices, cfLite.szFaceName, cfLite.nSize, cfLite.crText,
 		cfLite.bBold, cfLite.bItalic, cfLite.bUnderLine, FALSE);
 #else
-	USES_CONVERSION;
-	RichEdit_SetDefFont(pTextServices, A2W(cfLite.szFaceName), cfLite.nSize, cfLite.crText,
-		cfLite.bBold, cfLite.bItalic, cfLite.bUnderLine, FALSE);
+	LPCWSTR pszFaceNameW = AnsiToUnicode(cfLite.szFaceName);
+	if (pszFaceNameW != NULL)
+	{
+		RichEdit_SetDefFont(pTextServices, pszFaceNameW, cfLite.nSize, cfLite.crText,
+			cfLite.bBold, cfLite.bItalic, cfLite.bUnderLine, FALSE);
+		delete pszFaceNameW;
+	}
 #endif
 
 	pTextServices->Release();
@@ -1303,7 +1328,6 @@ void CChatDlg::OnBtnSendMsg()
 	ITextServices*	pTextServices = m_pRichEditInput->GetTextServices();
 
 	// 如果m_pHost也是本软件用户，则消息包含OLE信息、字体信息。
-
 	wstring	strTextW;
 	RichEdit_GetText(pTextServices, strTextW, m_pHost->hostStatus & IM_FXIMOPT);
 
@@ -1314,18 +1338,28 @@ void CChatDlg::OnBtnSendMsg()
 
 	string strTextA;
 
-	USES_CONVERSION;
 	if (strTextW.size() > 0 && m_pHost->hostStatus & IM_FXIMOPT) 
 	{
 		tstring strFontString = EncodeFontString(pCfg->cfLite);
 #if (defined(UNICODE) || defined(_UNICODE))
-		strTextA = W2A(strFontString.data());
+		LPCSTR pszFontStringA = UnicodeToAnsi(strFontString.data());
+		if (pszFontStringA != NULL)
+		{
+			strTextA = pszFontStringA;
+			delete pszFontStringA;
+		}
 #else
 		strTextA = strFontString;
 #endif
 	}
-	
-	strTextA += W2A(strTextW.data());
+
+	LPCTSTR pszTextA = UnicodeToAnsi(strTextW.data());
+	if (pszTextA == NULL)
+	{
+		return ;
+	}
+	strTextA += pszTextA;
+	delete pszTextA;
 	DisposeLocalMsg(strTextA);
 	
 	if (strTextA.length() >= MAX_UDPBUF) 
@@ -1341,7 +1375,14 @@ void CChatDlg::OnBtnSendMsg()
 	if (strTextA.size() > 0)
 	{
 #if (defined(UNICODE) || defined(_UNICODE))
-		AddMsgToRichEditView(A2W(strTextA.c_str()), A2W(pMainDlg->GetNickNameEx()), time(NULL), RGB(0, 128, 64));
+		LPCWSTR pszMsgW = AnsiToUnicode(strTextA.c_str());
+		LPCWSTR pszNickNameW = AnsiToUnicode(pMainDlg->GetNickNameEx());
+		if (pszMsgW != NULL && pszNickNameW != NULL)
+		{
+			AddMsgToRichEditView(pszMsgW, A2W(), time(NULL), RGB(0, 128, 64));
+			delete pszMsgW;
+			delete pszNickNameW;
+		}		
 #else
 		AddMsgToRichEditView(strTextA.c_str(), pMainDlg->GetNickNameEx(), time(NULL), RGB(0, 128, 64));
 #endif
@@ -1707,10 +1748,18 @@ void CChatDlg::AddMsgBuf(MsgBuf *msg)
 	if (_tcslen(msg->msgBuf) > 0) 
 	{
 #if (defined(UNICODE) || defined(_UNICODE))
-		USES_CONVERSION;
-		AddMsgToRichEditView(A2W(msg->msgBuf), A2W(m_pHost->NickNameEx()), msg->recvTime, RGB(0, 0, 255));
+		LPCWSTR pszMsgBufW = AnsiToUnicode(msg->msgBuf);
+		LPCWSTR pszNickNameExW = AnsiToUnicode(m_pHost->NickNameEx());
+		if (pszMsgBufW != NULL && pszNickNameExW != NULL)
+		{
+			AddMsgToRichEditView(pszMsgBufW, pszNickNameExW, 
+				msg->recvTime, RGB(0, 0, 255));
+			delete pszMsgBufW;
+			delete pszNickNameExW;
+		}		
 #else
-		AddMsgToRichEditView(msg->msgBuf, m_pHost->NickNameEx(), msg->recvTime, RGB(0, 0, 255));
+		AddMsgToRichEditView(msg->msgBuf, m_pHost->NickNameEx(), 
+			msg->recvTime, RGB(0, 0, 255));
 #endif
 	}
 }
@@ -1730,7 +1779,8 @@ void CChatDlg::SetShareInfo(ShareInfo* pShareInfo)
 	SetButtonFileShareText(true);
 }
 
-bool CChatDlg::AddPanel(LPCTSTR pszText, CControlUI* pControlPanel, bool bHasCloseBtn, LPCTSTR pszCloseBtnName)
+bool CChatDlg::AddPanel(LPCTSTR pszText, CControlUI* pControlPanel,
+						bool bHasCloseBtn, LPCTSTR pszCloseBtnName)
 {
 	COptionUI*	pOption = new COptionUI;
 	TCHAR		szName[MAX_PATH] = {0};
@@ -1778,7 +1828,6 @@ bool CChatDlg::AddPanel(LPCTSTR pszText, CControlUI* pControlPanel, bool bHasClo
 		pButtonClose->SetFixedWidth(15);
 		pButtonClose->SetFixedHeight(15);
 	}
-	
 
 	AdjustLayoutOption();
 	return true;

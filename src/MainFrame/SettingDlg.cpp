@@ -119,10 +119,19 @@ void CSettingDlg::InitTabLayoutNetWork()
 			continue;
 		}
 #if (defined(UNICODE) || defined(_UNICODE))
-		USES_CONVERSION;
-		pListLabel->SetText(A2W(szBuf));
-		pListLabel->SetToolTip(A2W(szBuf));
-		pListLabel->SetUserData(A2W(pAdapter->AdapterName));
+		LPCWSTR pszBufW = AnsiToUnicode(szBuf);
+		if (pszBufW != NULL)
+		{
+			pListLabel->SetText(pszBufW);
+			pListLabel->SetToolTip(pszBufW);
+			delete pszBufW;
+		}
+		LPCWSTR pszAdapterNameW = UnicodeToAnsi(pAdapter->AdapterName);
+		if (pszAdapterNameW != NULL)
+		{
+			pListLabel->SetUserData(pszAdapterNameW);
+			delete pszAdapterNameW;
+		}
 #else
 		pListLabel->SetText(szBuf);
 		pListLabel->SetToolTip(szBuf);

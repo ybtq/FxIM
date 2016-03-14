@@ -23,8 +23,12 @@ BOOL CGifImage::LoadFromFile(LPCTSTR pszFileName)
 #if defined(UNICODE) || defined(_UNICODE)
 	m_pImage = new Gdiplus::Image(pszFileName);
 #else
-	USES_CONVERSION;
-	m_pImage = new Gdiplus::Image(A2W(pszFileName));
+	LPCWSTR pszFileNameW = AnsiToUnicode(pszFileName);
+	if (pszFileNameW != NULL)
+	{
+		m_pImage = new Gdiplus::Image(pszFileNameW);
+		delete pszFileNameW;
+	}
 #endif
 	if (NULL == m_pImage)
 		return FALSE;
@@ -109,8 +113,13 @@ BOOL CGifImage::SaveAsFile(LPCTSTR pszFileName)
 #if defined(UNICODE) || defined(_UNICODE)
 	CLSID clsid = GetEncoderClsidByExtension(lpExtension);
 #else
-	USES_CONVERSION;
-	CLSID clsid = GetEncoderClsidByExtension(A2W(lpExtension));
+	CLSID	clsid = CLSID_NULL;
+	LPCWSTR pszExtensionW = AnsiToUnicode(lpExtension);
+	if (pszExtensionW != NULL)
+	{
+		clsid = GetEncoderClsidByExtension(pszExtensionW);
+		delete pszExtensionW;
+	}
 #endif
 	
 	if (CLSID_NULL == clsid)
@@ -119,7 +128,13 @@ BOOL CGifImage::SaveAsFile(LPCTSTR pszFileName)
 #if defined(UNICODE) || defined(_UNICODE)
 	Gdiplus::Status status = m_pImage->Save(pszFileName, &clsid, NULL);
 #else
-	Gdiplus::Status status = m_pImage->Save(A2W(pszFileName), &clsid, NULL);
+	Gdiplus::Status status = Gdiplus::GenericError;
+	LPCWSTR pszFileNameW = AnsiToUnicode(pszFileName);
+	if (pszFileNameW != NULL)
+	{
+		status = m_pImage->Save(pszFileNameW, &clsid, NULL);
+		delete pszFileNameW;
+	}
 #endif
 	return (status != Gdiplus::Ok) ? FALSE : TRUE;
 }
